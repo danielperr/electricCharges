@@ -6,9 +6,10 @@
 * Place positive charges using left-click, negative ones using right-click.
 
 When two charges collide, they share their charge and "spread" it out evenly between the two.
+The charge's color intensity tells how strong the charge is. Blue is for positive charges, red is for negative charges.
 
 ### Todo List
-* Add adjustable charge when placing charges
+* Add adjustable charge power when placing charges
 * Add pause / resume button
 * Add time multiplier
 * Add a delete tool
