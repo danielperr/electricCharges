@@ -2,6 +2,7 @@
 
 **This project features a simulation of electric charges moving in 2d space, illustration of coulomb's law.**
 
+
 ### Controls
 * Place positive charges using left-click, negative ones using right-click.
 
@@ -18,6 +19,11 @@ The charge's color intensity tells how strong the charge is. Blue is for positiv
 * Add move tool
 
 ### Change log
-* **March 15th 2017:** Repository created
-* **March 15th 2017:** Updated readme.md
-* **March 18th 2017:** Wall bounce is now more stable; Charges now stick together instead of sharing their charge; Small scale fixes and changes
+* **March 15th 2017:** 
+  - Repository created
+* **March 15th 2017:**
+  - Updated readme.md
+* **March 18th 2017:**
+  - Wall bounce is now more stable
+  - Charges now stick together instead of sharing their charge
+  - Small scale fixes and changes
