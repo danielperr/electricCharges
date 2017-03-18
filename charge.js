@@ -7,7 +7,9 @@ class Charge {
     this.y = y;
     this.power = power; // Charge is measured in coulombs
     this.mass = mass; // Mass is measured in kg
-    this.kinetic = kinetic || true;
+    this.radius = mass;
+    this.kinetic = kinetic;
+    this.oob = false;
     
     this.acc = { // Acceleration is measured in m/s^2
       x: 0,
@@ -34,17 +36,9 @@ class Charge {
     
     for (var j=0; j<charges.length; j++) {
       var charge = charges[j];
-      if (!(this.x == charge.x && this.y == charge.y)) {
+      if (!((this.x == charge.x && this.y == charge.y) || charge.oob)) {
       
-        var dist = Math.sqrt(Math.pow(charge.x-this.x, 2) + Math.pow(charge.y-this.y, 2));
-        
-        if (dist <= 10) {
-          var charge1 = this.power;
-          var charge2 = charge.power;
-          
-          this.power = (charge1+charge2)/2;
-          charge.power = (charge1+charge2)/2;
-        }
+        var dist = Math.max(Math.sqrt(Math.pow(charge.x-this.x, 2) + Math.pow(charge.y-this.y, 2)), charge.radius+this.radius);
         
         var f = (9 * 10**9 * this.power * charge.power) / Math.pow(dist, 2);
         
@@ -52,6 +46,7 @@ class Charge {
         var fy = f * (this.y-charge.y)/dist;
         
         this.forces.push({x: fx, y: fy});
+        
         
       } 
     }
@@ -73,6 +68,7 @@ class Charge {
   
   
   calcMotion(mod) {
+    if (this.kinetic) {
     
     this.acc.x = this.res.x / this.mass;
     this.acc.y = this.res.y / this.mass;
@@ -80,29 +76,38 @@ class Charge {
     this.vel.x += this.acc.x * mod;
     this.vel.y += this.acc.y * mod;
     
-    if ((this.x <= 0) || (this.x >= cw)) {
-      this.vel.x *= -0.5;
-      this.x += this.vel.x * 0.1
+    if ((this.x < -this.radius) || (this.x > cw+this.radius) || (this.y < -this.radius) || (this.y > ch+this.radius)) {
+      //this.oob = true;
+    }
+      
+    
+    if (this.x <= this.radius) {
+      this.vel.x = Math.abs(this.vel.x);
+    } if (this.x >= cw-this.radius) {
+      this.vel.x = -Math.abs(this.vel.x);
+    } if (this.y <= this.radius) {
+      this.vel.y = Math.abs(this.vel.y);
+    } if (this.y >= ch-this.radius) {
+      this.vel.y = -Math.abs(this.vel.y);
     }
     
-    if ((this.y <= 0) || (this.y >= ch)) {
-      this.vel.y *= -0.5;
-      this.y += this.vel.y * 0.1
-    }
     
     this.x += this.vel.x * mod + 0.5 * this.acc.x * Math.pow(mod, 2);
     this.y += this.vel.y * mod + 0.5 * this.acc.y * Math.pow(mod, 2);
-    
+      
+    }
   }
   
   
   
   render() {
     
-    var col = 'rgb('+(-this.power*10000)+', 0, '+this.power*10000+')';
+    if (this.oob) {return false}
     
-    draw.arrow(this.x, this.y, this.x+this.res.x, this.y+this.res.y, 10, 2, "black");
-    draw.circle(this.x, this.y, this.mass, col);
+    var col = 'rgb('+(-this.power*3000)+', 0, '+this.power*3000+')';
+    
+    //draw.arrow(this.x, this.y, this.x+(this.res.x/10), this.y+(this.res.y/10), 10, 2, "black");
+    draw.circle(this.x, this.y, this.radius, col);
     draw.sign(this.x, this.y, this.mass*0.75, this.power, 2, "white");
     
   }

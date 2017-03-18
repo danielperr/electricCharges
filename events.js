@@ -7,7 +7,7 @@ $(document).resize(function(){
 
 $('#theCanvas').contextmenu(function(e){
   
-  charges.push(new Charge(e.clientX, e.clientY, -0.02, 10));
+  charges.push(new Charge(e.clientX, e.clientY, -0.1, 10, kinetic));
   return false;
   
 });
@@ -15,6 +15,14 @@ $('#theCanvas').contextmenu(function(e){
 
 $('#theCanvas').click(function(e){
   
-  charges.push(new Charge(e.clientX, e.clientY, 0.02, 10));
+  charges.push(new Charge(e.clientX, e.clientY, 0.1, 10, kinetic));
+  tutorial1 = false;
   
 });
+
+
+var kinetic = true;
+function staticMode() {
+  kinetic = !kinetic;
+  console.log('Static-Mode: ', !kinetic);
+}

@@ -5,7 +5,7 @@
 ### Controls
 * Place positive charges using left-click, negative ones using right-click.
 
-When two charges collide, they share their charge and "spread" it out evenly between the two.
+When two charges collide, they will "stick" together. Try forming shapes with them!
 The charge's color intensity tells how strong the charge is. Blue is for positive charges, red is for negative charges.
 
 ### Todo List
@@ -15,3 +15,9 @@ The charge's color intensity tells how strong the charge is. Blue is for positiv
 * Add a delete tool
 * Add option for placing a fixed charge, one that is fixed in place and doesn't move.
 * Add friction
+* Add move tool
+
+### Change log
+* **March 15th 2017:** Repository created
+* **March 15th 2017:** Updated readme.md
+* **March 18th 2017:** Wall bounce is now more stable; Charges now stick together instead of sharing their charge; Small scale fixes and changes

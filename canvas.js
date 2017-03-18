@@ -18,6 +18,7 @@ caResize();
 
 function Draw() {
   
+  this.defaultFont = 'Arial';
   
   this.circle = function (x, y, r, c) {
     
@@ -89,6 +90,23 @@ function Draw() {
     
   }
   
+  
+  this.text = function (x, y, text, size, color, font) {
+    
+    family = font || this.defaultFont;
+    ctx.font = size+'px '+family;
+    ctx.fillStyle = color;
+    ctx.fillText(text, x, y);
+  
+  }
+  
+  
+  this.fill = function (color) {
+    
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, cw, ch);
+    
+  }
   
 }
 

@@ -1,11 +1,13 @@
-charges.push(new Charge(200, 200, 0.02, 10));
-charges.push(new Charge(400, 400, -0.02, 10));
+var timeMultiply = 1;
+var tutorial1 = true;
+var manualMod;
+
 
 function main(mod) {
   
+  mod *= timeMultiply;
   
-  ctx.fillStyle = "white";
-  ctx.fillRect(0, 0, cw, ch);
+  draw.fill('white');
   
   for (var i=0; i<charges.length; i++) {
     charges[i].calcForce(charges);
@@ -19,9 +21,16 @@ function main(mod) {
     charges[i].render();
   }
   
+  
+  /*if (tutorial1) {
+    draw.text(cw/2, ch/2, 'Use left click and right click', '32', 'black');
+    draw.text(cw/2, ch/2, 'to place charges', '32', 'black');
+  }*/
+  
+  
 }
 
-fps = 60
+fps = 60; // Change fps if you want to save energy
 
 setInterval(function(){main(1/fps)}, 1000/fps);
 
