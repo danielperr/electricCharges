@@ -1,7 +1,7 @@
 # Electric Charges
 
 **This project features a simulation of electric charges moving in 2d space, illustration of coulomb's law.**
-
+[Click here to play](https://htmlpreview.github.io/?https://github.com/danielperr/electricCharges/blob/master/index.html) 
 
 ### Controls
 * Place positive charges using left-click, negative ones using right-click.
