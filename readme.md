@@ -10,13 +10,13 @@ When two charges collide, they will "stick" together. Try forming shapes with th
 The charge's color intensity tells how strong the charge is. Blue is for positive charges, red is for negative charges.
 
 ### Todo List
--[ ] Add adjustable charge power when placing charges
--[ ] Add pause / resume button
--[x] Add time multiplier (Currently only in console, soon in a menu)
--[ ] Add a delete tool
--[ ] Add option for placing a fixed charge, one that is fixed in place and doesn't move.
--[ ] Add friction
--[ ] Add move tool
+- [ ] Add adjustable charge power when placing charges
+- [ ] Add pause / resume button
+- [x] Add time multiplier (Currently only in console, soon in a menu)
+- [ ] Add a delete tool
+- [ ] Add option for placing a fixed charge, one that is fixed in place and doesn't move.
+- [ ] Add friction
+- [ ] Add move tool
 
 ### Change log
 * **March 14th 2017:** 
