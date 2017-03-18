@@ -19,9 +19,9 @@ The charge's color intensity tells how strong the charge is. Blue is for positiv
 * Add move tool
 
 ### Change log
-* **March 15th 2017:** 
+* **March 14th 2017:** 
   - Repository created
-* **March 15th 2017:**
+* **March 14th 2017:**
   - Updated readme.md
 * **March 18th 2017:**
   - Wall bounce is now more stable
