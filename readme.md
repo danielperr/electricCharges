@@ -14,9 +14,13 @@ The charge's color intensity tells how strong the charge is. Blue is for positiv
 - [ ] Add pause / resume button
 - [x] Add time multiplier (Currently only in console, soon in a menu)
 - [ ] Add a delete tool
-- [ ] Add option for placing a fixed charge, one that is fixed in place and doesn't move.
+- [x] Add option for placing a fixed charge, one that is fixed in place and doesn't move (Currently only in console, soon in a menu)
 - [ ] Add friction
 - [ ] Add move tool
+
+### Console Tricks
+* You can change the variable "timeMultiply" to make the time run faster (but program becomes less stable). Default value is 1.
+* The function staticMode() will toggle static mode. When on, charges you place are fixed in place and cannot move.
 
 ### Change log
 * **March 14th 2017:** 
