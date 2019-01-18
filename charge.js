@@ -92,8 +92,8 @@ class Charge {
     }
     
     
-    this.x += this.vel.x * mod + 0.5 * this.acc.x * Math.pow(mod, 2);
-    this.y += this.vel.y * mod + 0.5 * this.acc.y * Math.pow(mod, 2);
+    this.x += this.vel.x * mod;
+    this.y += this.vel.y * mod;
       
     }
   }
